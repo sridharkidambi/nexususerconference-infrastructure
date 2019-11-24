@@ -1,8 +1,8 @@
 // Bastion ELB
 resource "aws_elb" "bastion_hosts_elb" {
-  subnets                   = ["${aws_subnet.public_subnets.*.id}"]
+  subnets                   = aws_subnet.public_subnets.*.id
   cross_zone_load_balancing = true
-  security_groups           = ["${aws_security_group.bastion_elb.id}"]
+  security_groups           = [aws_security_group.bastion_elb.id]
 
   listener {
     instance_port     = 22
@@ -19,9 +19,10 @@ resource "aws_elb" "bastion_hosts_elb" {
     interval            = 30
   }
 
-  tags {
+  tags = {
     Name   = "bastion_elb_${var.vpc_name}"
     Author = "nexus-user-conference"
     Tool   = "Terraform"
   }
 }
+

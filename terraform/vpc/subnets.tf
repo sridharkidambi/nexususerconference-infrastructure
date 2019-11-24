@@ -45,11 +45,11 @@ resource "aws_internet_gateway" "igw" {
 resource "aws_eip" "nat" {
   vpc = true
 
-  tags {
-    Name   = "eip-nat_${var.vpc_name}"
-    Author = "nexus-user-conference"
-    Tool   = "Terraform"
-  }
+  # tags {
+  #   Name   = "eip-nat_${var.vpc_name}"
+  #   Author = "nexus-user-conference"
+  #   Tool   = "Terraform"
+  # }
 }
 
 // Nat Gateway

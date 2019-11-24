@@ -7,3 +7,4 @@ data "aws_ami" "bastion" {
     values = ["bastion-2018.03.0"]
   }
 }
+

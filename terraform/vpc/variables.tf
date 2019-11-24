@@ -20,7 +20,7 @@ variable "bastion_key_name" {
 }
 
 variable "availability_zones" {
-  type        = "list"
+  type        = list(string)
   description = "List of Availability Zones"
 }
 
@@ -49,3 +49,4 @@ variable "bastion_instance_type" {
   description = "Bastion Instance type"
   default     = "t2.micro"
 }
+
